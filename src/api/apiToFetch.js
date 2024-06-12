@@ -16,10 +16,28 @@ function fetchToDownloadDataAsCsv(url, fileName) {
     .then((resp) => resp.blob())
     .then((blob) => {
       createAndDownloadCsv(blob, fileName);
+      alert("The requested file is downloaded successfully!");
     })
     .catch(() => {
       alert("Issue with Downloading the file. Please try again later...");
     });
 }
 
-export { fetchToinitiateScrap, fetchToDownloadDataAsCsv };
+function fetchToDeleteData(url) {
+  fetch(url, {
+    method: "DELETE",
+  })
+    .then((resp) => resp.json)
+    .then((data) => {
+      if (data.isSuccess) {
+        alert(data.data);
+      } else {
+        alert(data.data);
+      }
+    })
+    .catch(() => {
+      alert("Issue with Deleting Data. Please try again later...");
+    });
+}
+
+export { fetchToinitiateScrap, fetchToDownloadDataAsCsv, fetchToDeleteData };

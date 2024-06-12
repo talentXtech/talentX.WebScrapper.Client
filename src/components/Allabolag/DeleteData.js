@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { fetchToDownloadDataAsCsv } from "../../api/apiToFetch";
+import { fetchToDeleteData } from "../../api/apiToFetch";
 import { urlEndPoints } from "../../api/AllabolagUrls";
 
-function DownloadData(props) {
+function DeleteData(props) {
   const [catergory, setCategory] = useState({
     value: "",
     isTouched: false,
@@ -12,46 +12,61 @@ function DownloadData(props) {
     isTouched: false,
   });
 
-  const getAllScrapDataAsCsv = (e) => {
-    e.prevent.default();
-    const fileName = "Allabolag-All-Data.csv";
-    var url = urlEndPoints.get.DataAsCSV;
-    fetchToDownloadDataAsCsv(url, fileName);
+  const deleteAllDataFromDb = (e) => {
+    var urlFOrInitialData = urlEndPoints.delete.initialScrapData;
+    var urlForDetailedData = urlEndPoints.delete.detailedScrapOutputData;
+    fetchToDeleteData(urlFOrInitialData);
+    fetchToDeleteData(urlForDetailedData);
+    props.setDataLoaded(false);
   };
 
-  function getScrapDataByCategoryAsCsv(e) {
+  function deleteDataByCategory(e) {
     var searchTerm = e.split(" ").join("%20");
-    var url = urlEndPoints.get.DataBySearchInput + searchTerm;
-    const fileName = "Allabolag-" + e + "-Data.csv";
-    fetchToDownloadDataAsCsv(url, fileName);
+    var url =
+      urlEndPoints.delete.detailedScrapOutputDataByCategory + searchTerm;
+    fetchToDeleteData(url);
     setCategory({ value: "", isTouched: false });
+    props.setDataLoaded(false);
   }
 
-  function getScrapDataBySearchInputAsCsv(e) {
+  function deleteDataBySearchInput(e) {
     var searchTerm = e.split(" ").join("%20");
-    var url = urlEndPoints.get.DataBySearchInput + searchTerm;
-    const fileName = "Allabolag-" + e + "-Data.csv";
-    fetchToDownloadDataAsCsv(url, fileName);
+    var url =
+      urlEndPoints.delete.detailedScrapOutputDataBySearchFilterInput +
+      searchTerm;
+    fetchToDeleteData(url);
     setInputText({ value: "", isTouched: false });
+    props.setDataLoaded(false);
   }
+
   return (
     <>
       <div className="container">
-        <h2>Download Scrapped data as CSV</h2>
+        <h2>Delete Scrapped data from Database</h2>
         <form className="formcontainer">
-          <h3>Download all Scrapped data as CSV</h3>
-          <button className="button primary" onClick={getAllScrapDataAsCsv}>
-            Download All as CSV
+          <h3>Delete all Scrapped data </h3>
+          <button
+            className="button primary"
+            onClick={() => {
+              if (
+                window.confirm("Are you sure you wish to delete this item?")
+              ) {
+                props.setDataLoaded(true);
+                deleteAllDataFromDb();
+              }
+            }}
+          >
+            Delete All Data
           </button>
         </form>
         <form className="formcontainer">
           <div>
             <p className="fieldTitle">
-              Select Category to filter & download data
+              Select Category to filter & delete data
             </p>
             <select
               className="para inputBox"
-              title="Select Category to filter & download data"
+              title="Select Category to filter & delete data"
               id="category"
               name="category"
               onFocus={() => {
@@ -79,19 +94,26 @@ function DownloadData(props) {
           <button
             disabled={catergory.value === ""}
             className="button primary"
-            onClick={() => getScrapDataByCategoryAsCsv(catergory.value)}
+            onClick={() => {
+              if (
+                window.confirm("Are you sure you wish to delete this item?")
+              ) {
+                props.setDataLoaded(true);
+                deleteDataByCategory(catergory.value);
+              }
+            }}
           >
-            Download as CSV
+            Delete Data
           </button>
         </form>
         <form className="formcontainer">
           <div>
             <p className="fieldTitle">
-              Select Searched Input-Text to filter & download data
+              Select Searched Input-Text to filter & delete data
             </p>
             <select
               className="para inputBox"
-              title="Select Searched Input-Text to filter & download data"
+              title="Select Searched Input-Text to filter & delete data"
               id="searchInputText"
               name="searchInputText"
               onFocus={() => {
@@ -119,13 +141,20 @@ function DownloadData(props) {
           <button
             disabled={inputText.value === ""}
             className="button primary"
-            onClick={() => getScrapDataBySearchInputAsCsv(inputText.value)}
+            onClick={() => {
+              if (
+                window.confirm("Are you sure you wish to delete this item?")
+              ) {
+                props.setDataLoaded(true);
+                deleteDataBySearchInput(inputText.value);
+              }
+            }}
           >
-            Download as CSV
+            Delete Data
           </button>
         </form>
       </div>
     </>
   );
 }
-export default DownloadData;
+export default DeleteData;

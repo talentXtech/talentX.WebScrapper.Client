@@ -1,16 +1,97 @@
-.App {
+* {
+  font-family: "worksans", sans-serif;
+  align-self: center;
+}
+
+/* for desktops */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+    display: grid;
+    margin: auto;
+  }
+  .formcontainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+}
+.breakLine {
+  border-bottom: solid 2px #4562d6;
+}
+
+.fieldTitle {
+  font-size: 18px;
+  margin: 0;
+}
+
+.buttontxt {
+  font-size: 20px;
+  font-weight: bold;
+}
+.para {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: expanded;
+}
+
+.para.message {
+  margin: 0;
+}
+.para.message.error {
+  color: red;
+}
+
+.inputBox {
+  height: 40px;
+  width: 80%;
+  border-radius: 25px;
+  border-color: #000;
+  border: solid 1px;
+  background-color: #ffffff;
+  cursor: pointer;
+  padding-left: 1rem;
+}
+
+.button {
+  width: 250px;
+  height: 50px;
+  color: #ffffff;
+  background-color: #4562d6;
   text-align: center;
+  font-size: 1.1em;
+  border-radius: 25px;
+  box-shadow: none;
+  border-style: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px #495e5757;
+  margin: auto;
+}
+.button.primary:hover {
+  background-color: #ffffff;
+  color: #4562d6;
+  border-color: #4562d6;
+  border: solid 1px;
+}
+
+.button.primary:disabled {
+  color: gray !important;
+  cursor: not-allowed;
+  background-color: #4562d6;
 }
 
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
-  margin: auto;
+  border-top: 16px solid #4562d6;
+  margin: 2rem auto;
   padding: auto;
-  margin-top: 25%;
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }

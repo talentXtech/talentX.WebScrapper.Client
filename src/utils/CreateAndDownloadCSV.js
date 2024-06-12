@@ -7,7 +7,6 @@ function createAndDownloadCsv(blob, fileName) {
   document.body.appendChild(a);
   a.click();
   window.URL.revokeObjectURL(url);
-  alert("The requested file is downloaded successfully!");
 }
 
 export { createAndDownloadCsv };
