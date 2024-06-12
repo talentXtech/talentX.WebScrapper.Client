@@ -1,12 +1,10 @@
 import "./App.css";
-import AllabolagScrapper from "./components/AllabolagScrapper";
-import AllabolagFilters from "./components/AllabolagFilters";
+import Allabolag from "./components/Allabolag/Allabolag";
 
 function App() {
   return (
     <div className="App">
-      <AllabolagScrapper />
-      <AllabolagFilters />
+      <Allabolag />
     </div>
   );
 }

@@ -1,32 +1,41 @@
 import { useEffect, useState } from "react";
+import { urlEndPoints } from "../../api/AllabolagUrls";
 function AllabolagFilters() {
   const [categories, setCategories] = useState([]);
   const [searchInputText, setSearchInputText] = useState([]);
 
   useEffect(() => {
-    fetch("https://localhost:7118/WebScrap/filtersByCategory")
+    fetch(urlEndPoints.filters.filtersByCategory)
       .then((res) => res.json())
       .then((data) => {
         if (data.isSuccess) {
-          setCategories(...data.data);
+          setCategories([...data.data]);
         }
       });
   }, []);
 
   useEffect(() => {
-    fetch("https://localhost:7118/WebScrap/filtersBySearchInput")
+    fetch(urlEndPoints.filters.filtersBySearchInput)
       .then((res) => res.json())
       .then((data) => {
         if (data.isSuccess) {
-          setSearchInputText(...data.data);
+          setSearchInputText([...data.data]);
         }
       });
   }, []);
 
   return (
     <>
-      <p>{categories}</p>
-      <p>{searchInputText}</p>
+      <ul>
+        {categories.map((x) => (
+          <li>{x}</li>
+        ))}
+      </ul>
+      <ul>
+        {searchInputText.map((x) => (
+          <li>{x}</li>
+        ))}
+      </ul>
     </>
   );
 }
