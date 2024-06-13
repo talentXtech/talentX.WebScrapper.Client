@@ -1,25 +1,25 @@
-const allabolagUrls = "https://localhost:7118/WebScrap/";
-const urlEndPoints = {
+const mainUrl = "https://localhost:7118/WebScrap/";
+const allabolagUrlEndpoints = {
   get: {
-    initiateScrap: allabolagUrls + "ScrapInfo?filterInput=",
-    DataAsCSV: allabolagUrls + "GetScrapInfoAsCSV",
+    initiateScrap: mainUrl + "ScrapInfo?filterInput=",
+    DataAsCSV: mainUrl + "GetScrapInfoAsCSV",
     DataBySearchInput:
-      allabolagUrls + "GetScrapInfoAsCSVBySearchInput?filterInput=",
-    DataByCategory: allabolagUrls + "GetScrapInfoAsCSVByCategory?filterInput=",
+      mainUrl + "GetScrapInfoAsCSVBySearchInput?filterInput=",
+    DataByCategory: mainUrl + "GetScrapInfoAsCSVByCategory?filterInput=",
   },
   delete: {
-    initialScrapData: allabolagUrls + "DeleteInitialScrapOutputData",
-    detailedScrapOutputData: allabolagUrls + "DeleteDetailedScrapOutputData",
+    initialScrapData: mainUrl + "DeleteInitialScrapOutputData",
+    detailedScrapOutputData: mainUrl + "DeleteDetailedScrapOutputData",
     detailedScrapOutputDataByCategory:
-      allabolagUrls + "DeleteDetailedScrapOutputDataByCategory?filterInput=",
+      mainUrl + "DeleteDetailedScrapOutputDataByCategory?filterInput=",
     detailedScrapOutputDataBySearchFilterInput:
-      allabolagUrls +
+      mainUrl +
       "DeleteDetailedScrapOutputDataBySearchFilterInput?filterInput=",
   },
   filters: {
-    filtersBySearchInput: allabolagUrls + "filtersBySearchInput",
-    filtersByCategory: allabolagUrls + "filtersByCategory",
+    filtersBySearchInput: mainUrl + "filtersBySearchInput",
+    filtersByCategory: mainUrl + "filtersByCategory",
   },
 };
 
-export { urlEndPoints };
+export { allabolagUrlEndpoints };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { fetchToDownloadDataAsCsv } from "../../api/apiToFetch";
-import { urlEndPoints } from "../../api/AllabolagUrls";
+import { allabolagUrlEndpoints } from "../../api/AllabolagUrls";
 
 function DownloadData(props) {
   const [catergory, setCategory] = useState({
@@ -14,13 +14,13 @@ function DownloadData(props) {
 
   const getAllScrapDataAsCsv = () => {
     const fileName = "Allabolag-All-Data.csv";
-    var url = urlEndPoints.get.DataAsCSV;
+    var url = allabolagUrlEndpoints.get.DataAsCSV;
     fetchToDownloadDataAsCsv(url, fileName);
   };
 
   function getScrapDataByCategoryAsCsv(e) {
     var searchTerm = e.split(" ").join("%20");
-    var url = urlEndPoints.get.DataBySearchInput + searchTerm;
+    var url = allabolagUrlEndpoints.get.DataBySearchInput + searchTerm;
     const fileName = "Allabolag-" + e + "-Data.csv";
     fetchToDownloadDataAsCsv(url, fileName);
     setCategory({ value: "", isTouched: false });
@@ -28,7 +28,7 @@ function DownloadData(props) {
 
   function getScrapDataBySearchInputAsCsv(e) {
     var searchTerm = e.split(" ").join("%20");
-    var url = urlEndPoints.get.DataBySearchInput + searchTerm;
+    var url = allabolagUrlEndpoints.get.DataBySearchInput + searchTerm;
     const fileName = "Allabolag-" + e + "-Data.csv";
     fetchToDownloadDataAsCsv(url, fileName);
     setInputText({ value: "", isTouched: false });
@@ -123,6 +123,7 @@ function DownloadData(props) {
             Download as CSV
           </button>
         </form>
+        <div className="breakLine"></div>
       </div>
     </>
   );

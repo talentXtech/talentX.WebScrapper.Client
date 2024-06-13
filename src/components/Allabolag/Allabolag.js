@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import DownloadData from "./DownloadData";
-import { urlEndPoints } from "../../api/AllabolagUrls";
+import { allabolagUrlEndpoints } from "../../api/AllabolagUrls";
 import ScrapData from "./ScrapData";
 import DeleteData from "./DeleteData";
 
@@ -10,7 +10,7 @@ function Allabolag() {
   const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(urlEndPoints.filters.filtersByCategory)
+    fetch(allabolagUrlEndpoints.filters.filtersByCategory)
       .then((res) => res.json())
       .then((data) => {
         if (data.isSuccess) {
@@ -20,7 +20,7 @@ function Allabolag() {
   }, [dataLoaded]);
 
   useEffect(() => {
-    fetch(urlEndPoints.filters.filtersBySearchInput)
+    fetch(allabolagUrlEndpoints.filters.filtersBySearchInput)
       .then((res) => res.json())
       .then((data) => {
         if (data.isSuccess) {

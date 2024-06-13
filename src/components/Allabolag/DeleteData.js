@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { fetchToDeleteData } from "../../api/apiToFetch";
-import { urlEndPoints } from "../../api/AllabolagUrls";
+import { allabolagUrlEndpoints } from "../../api/AllabolagUrls";
 
 function DeleteData(props) {
   const [catergory, setCategory] = useState({
@@ -13,8 +13,8 @@ function DeleteData(props) {
   });
 
   const deleteAllDataFromDb = (e) => {
-    var urlFOrInitialData = urlEndPoints.delete.initialScrapData;
-    var urlForDetailedData = urlEndPoints.delete.detailedScrapOutputData;
+    var urlFOrInitialData = allabolagUrlEndpoints.delete.initialScrapData;
+    var urlForDetailedData = allabolagUrlEndpoints.delete.detailedScrapOutputData;
     fetchToDeleteData(urlFOrInitialData);
     fetchToDeleteData(urlForDetailedData);
     props.setDataLoaded(false);
@@ -23,7 +23,7 @@ function DeleteData(props) {
   function deleteDataByCategory(e) {
     var searchTerm = e.split(" ").join("%20");
     var url =
-      urlEndPoints.delete.detailedScrapOutputDataByCategory + searchTerm;
+      allabolagUrlEndpoints.delete.detailedScrapOutputDataByCategory + searchTerm;
     fetchToDeleteData(url);
     setCategory({ value: "", isTouched: false });
     props.setDataLoaded(!props.dataLoaded);
@@ -32,7 +32,7 @@ function DeleteData(props) {
   function deleteDataBySearchInput(e) {
     var searchTerm = e.split(" ").join("%20");
     var url =
-      urlEndPoints.delete.detailedScrapOutputDataBySearchFilterInput +
+      allabolagUrlEndpoints.delete.detailedScrapOutputDataBySearchFilterInput +
       searchTerm;
     fetchToDeleteData(url);
     setInputText({ value: "", isTouched: false });
@@ -151,6 +151,7 @@ function DeleteData(props) {
             Delete Data
           </button>
         </form>
+        <div className="breakLine"></div>
       </div>
     </>
   );
