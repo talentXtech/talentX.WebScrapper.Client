@@ -13,13 +13,13 @@ function ScrapData(props) {
 
   function initiateScrapHandler() {
     setLoading(true);
-    props.setDataLoaded(true);
+
     fetchToinitiateScrap(urlEndPoints.get.initiateScrap + inputFieldText.value)
       .then((response) => response.json())
       .then((data) => {
         if (data.isSuccess) {
           setLoading(false);
-          alert("Data scrapped successfully and is ready for download!");
+          alert(data.data);
         } else {
           alert("Issue with Scrapping data. Try again later...");
           setLoading(false);
@@ -31,7 +31,7 @@ function ScrapData(props) {
       })
       .finally(() => {
         setInputFieldText({ value: "", isTouched: false });
-        props.setDataLoaded(false);
+        props.setDataLoaded(!props.dataLoaded);
       });
   }
 

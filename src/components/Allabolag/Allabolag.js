@@ -30,9 +30,14 @@ function Allabolag() {
   }, [dataLoaded]);
   return (
     <>
-      <ScrapData setDataLoaded={setDataLoaded} />
+      <ScrapData setDataLoaded={setDataLoaded} dataLoaded={dataLoaded} />
       <DownloadData categories={categories} searchInputText={searchInputText} />
-      <DeleteData setDataLoaded={setDataLoaded} />
+      <DeleteData
+        setDataLoaded={setDataLoaded}
+        dataLoaded={dataLoaded}
+        categories={categories}
+        searchInputText={searchInputText}
+      />
     </>
   );
 }

@@ -26,7 +26,7 @@ function DeleteData(props) {
       urlEndPoints.delete.detailedScrapOutputDataByCategory + searchTerm;
     fetchToDeleteData(url);
     setCategory({ value: "", isTouched: false });
-    props.setDataLoaded(false);
+    props.setDataLoaded(!props.dataLoaded);
   }
 
   function deleteDataBySearchInput(e) {
@@ -36,7 +36,7 @@ function DeleteData(props) {
       searchTerm;
     fetchToDeleteData(url);
     setInputText({ value: "", isTouched: false });
-    props.setDataLoaded(false);
+    props.setDataLoaded(!props.dataLoaded);
   }
 
   return (
@@ -98,7 +98,6 @@ function DeleteData(props) {
               if (
                 window.confirm("Are you sure you wish to delete this item?")
               ) {
-                props.setDataLoaded(true);
                 deleteDataByCategory(catergory.value);
               }
             }}
@@ -145,7 +144,6 @@ function DeleteData(props) {
               if (
                 window.confirm("Are you sure you wish to delete this item?")
               ) {
-                props.setDataLoaded(true);
                 deleteDataBySearchInput(inputText.value);
               }
             }}

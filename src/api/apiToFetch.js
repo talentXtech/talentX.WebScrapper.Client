@@ -27,10 +27,10 @@ function fetchToDeleteData(url) {
   fetch(url, {
     method: "DELETE",
   })
-    .then((resp) => resp.json)
+    .then((resp) => resp.json())
     .then((data) => {
       if (data.isSuccess) {
-        alert(data.data);
+        alert("Data deleted successfully!");
       } else {
         alert(data.data);
       }

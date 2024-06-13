@@ -12,8 +12,7 @@ function DownloadData(props) {
     isTouched: false,
   });
 
-  const getAllScrapDataAsCsv = (e) => {
-    e.prevent.default();
+  const getAllScrapDataAsCsv = () => {
     const fileName = "Allabolag-All-Data.csv";
     var url = urlEndPoints.get.DataAsCSV;
     fetchToDownloadDataAsCsv(url, fileName);
