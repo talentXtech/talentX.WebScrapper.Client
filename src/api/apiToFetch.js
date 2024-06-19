@@ -1,8 +1,8 @@
 import { createAndDownloadCsv } from "../utils/CreateAndDownloadCSV";
 
-function fetchToinitiateScrap(url) {
+function postFetchToinitiateScrap(url) {
   var apiRequest = fetch(url, {
-    method: "GET",
+    method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -40,4 +40,8 @@ function fetchToDeleteData(url) {
     });
 }
 
-export { fetchToinitiateScrap, fetchToDownloadDataAsCsv, fetchToDeleteData };
+export {
+  fetchToDownloadDataAsCsv,
+  fetchToDeleteData,
+  postFetchToinitiateScrap,
+};

@@ -13,17 +13,15 @@ function DeleteData(props) {
   });
 
   const deleteAllDataFromDb = (e) => {
-    var urlFOrInitialData = allabolagUrlEndpoints.delete.initialScrapData;
-    var urlForDetailedData = allabolagUrlEndpoints.delete.detailedScrapOutputData;
-    fetchToDeleteData(urlFOrInitialData);
-    fetchToDeleteData(urlForDetailedData);
-    props.setDataLoaded(false);
+    var url = allabolagUrlEndpoints.delete.allScrapOutputData;
+    fetchToDeleteData(url);
+    props.setDataLoaded(!props.dataLoaded);
   };
 
   function deleteDataByCategory(e) {
     var searchTerm = e.split(" ").join("%20");
     var url =
-      allabolagUrlEndpoints.delete.detailedScrapOutputDataByCategory + searchTerm;
+      allabolagUrlEndpoints.delete.scrapOutputDataByCategory + searchTerm;
     fetchToDeleteData(url);
     setCategory({ value: "", isTouched: false });
     props.setDataLoaded(!props.dataLoaded);
@@ -32,7 +30,7 @@ function DeleteData(props) {
   function deleteDataBySearchInput(e) {
     var searchTerm = e.split(" ").join("%20");
     var url =
-      allabolagUrlEndpoints.delete.detailedScrapOutputDataBySearchFilterInput +
+      allabolagUrlEndpoints.delete.scrapOutputDataBySearchFilterInput +
       searchTerm;
     fetchToDeleteData(url);
     setInputText({ value: "", isTouched: false });
@@ -151,7 +149,6 @@ function DeleteData(props) {
             Delete Data
           </button>
         </form>
-        <div className="breakLine"></div>
       </div>
     </>
   );

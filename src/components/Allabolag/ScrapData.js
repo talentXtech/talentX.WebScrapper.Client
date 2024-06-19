@@ -1,6 +1,6 @@
 import { useState } from "react";
 import LoadingComponent from "../LoadingComponent";
-import { fetchToinitiateScrap } from "../../api/apiToFetch";
+import { postFetchToinitiateScrap } from "../../api/apiToFetch";
 import { allabolagUrlEndpoints } from "../../api/AllabolagUrls";
 
 function ScrapData(props) {
@@ -14,7 +14,9 @@ function ScrapData(props) {
   function initiateScrapHandler() {
     setLoading(true);
 
-    fetchToinitiateScrap(allabolagUrlEndpoints.get.initiateScrap + inputFieldText.value)
+    postFetchToinitiateScrap(
+      allabolagUrlEndpoints.post.initiateScrap + inputFieldText.value
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.isSuccess) {

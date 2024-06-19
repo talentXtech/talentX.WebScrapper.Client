@@ -1,20 +1,19 @@
 const mainUrl = "https://localhost:7118/WebScrap/";
 const allabolagUrlEndpoints = {
-  get: {
+  post: {
     initiateScrap: mainUrl + "ScrapInfo?filterInput=",
+  },
+  get: {
     DataAsCSV: mainUrl + "GetScrapInfoAsCSV",
-    DataBySearchInput:
-      mainUrl + "GetScrapInfoAsCSVBySearchInput?filterInput=",
+    DataBySearchInput: mainUrl + "GetScrapInfoAsCSVBySearchInput?filterInput=",
     DataByCategory: mainUrl + "GetScrapInfoAsCSVByCategory?filterInput=",
   },
   delete: {
-    initialScrapData: mainUrl + "DeleteInitialScrapOutputData",
-    detailedScrapOutputData: mainUrl + "DeleteDetailedScrapOutputData",
-    detailedScrapOutputDataByCategory:
-      mainUrl + "DeleteDetailedScrapOutputDataByCategory?filterInput=",
-    detailedScrapOutputDataBySearchFilterInput:
-      mainUrl +
-      "DeleteDetailedScrapOutputDataBySearchFilterInput?filterInput=",
+    allScrapOutputData: mainUrl + "DeleteAllScrapOutputData",
+    scrapOutputDataByCategory:
+      mainUrl + "DeleteScrapOutputDataByCategory?filterInput=",
+    scrapOutputDataBySearchFilterInput:
+      mainUrl + "DeleteScrapOutputDataBySearchFilterInput?filterInput=",
   },
   filters: {
     filtersBySearchInput: mainUrl + "filtersBySearchInput",

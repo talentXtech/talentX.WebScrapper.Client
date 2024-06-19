@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { fetchToDownloadDataAsCsv } from "../../api/apiToFetch";
-import { layoffUrlEndPoints } from "../../api/layoffUrlEndPoints";
+import {layoffUrlEndPoints} from "../../api/LayoffUrls"
 
 function DownloadData() {
 

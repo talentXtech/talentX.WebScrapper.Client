@@ -83,7 +83,39 @@
   cursor: not-allowed;
   background-color: #4562d6;
 }
+nav .container {
+  grid-template-columns: auto auto;
+  grid-template-areas: "logo menu";
+}
+.laptopNavBar {
+  box-shadow: 0px 0px 20px 0px #000;
+}
 
+nav ul {
+  grid-area: menu;
+  display: flex;
+  list-style: none;
+  text-align: right;
+  justify-content: space-around;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+img {
+  height: 32px;
+}
+
+.nav-item {
+  font-size: 24px;
+  color: #000;
+  text-decoration: none;
+}
+.nav-item:hover {
+  color: #4562d6;
+  text-decoration: underline;
+}
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;

@@ -1,7 +1,9 @@
 const mainUrl = "https://localhost:7292/WebScrap/";
 const layoffUrlEndPoints = {
-  get: {
+  post:{
     ScrapData: mainUrl + "GetScrapInfo",
+  },
+  get: {
     DataAsCSV: mainUrl + "GetScrapInfoAsCSV",
     
   },

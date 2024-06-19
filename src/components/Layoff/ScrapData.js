@@ -1,17 +1,15 @@
 import { useState } from "react";
 import LoadingComponent from "../LoadingComponent";
-import { fetchToinitiateScrap } from "../../api/apiToFetch";
-import {layoffUrlEndPoints} from "../../api/layoffUrlEndPoints"
-
+import { postFetchToinitiateScrap } from "../../api/apiToFetch";
+import { layoffUrlEndPoints } from "../../api/LayoffUrls";
 
 function ScrapData() {
-
   const [isLoading, setLoading] = useState(false);
 
   function initiateScrapHandler() {
     setLoading(true);
 
-    fetchToinitiateScrap(layoffUrlEndPoints.get.initiateScrap)
+    postFetchToinitiateScrap(layoffUrlEndPoints.post.ScrapData)
       .then((response) => response.json())
       .then((data) => {
         if (data.isSuccess) {
@@ -38,11 +36,8 @@ function ScrapData() {
         ) : (
           <>
             <form className="formcontainer">
-            <h3>Srap data from Layoff</h3>
-              <button
-                className="button primary"
-                onClick={initiateScrapHandler}
-              >
+              <h3>Srap data from Layoff</h3>
+              <button className="button primary" onClick={initiateScrapHandler}>
                 Scrap Data
               </button>
             </form>

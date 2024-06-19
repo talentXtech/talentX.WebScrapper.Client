@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { fetchToDeleteData } from "../../api/apiToFetch";
-import { layoffUrlEndPoints } from "../../api/layoffUrlEndPoints";
+import {layoffUrlEndPoints} from "../../api/LayoffUrls"
 
 function DeleteData() {
   const deleteAllDataFromDb = (e) => {
@@ -27,7 +26,6 @@ function DeleteData() {
             Delete All Data
           </button>
         </form>
-        <div className="breakLine"></div>
       </div>
     </>
   );
