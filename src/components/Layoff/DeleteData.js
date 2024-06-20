@@ -1,9 +1,10 @@
 import { fetchToDeleteData } from "../../api/apiToFetch";
-import {layoffUrlEndPoints} from "../../api/LayoffUrls"
+import { layoffUrlEndPoints } from "../../api/LayoffUrls";
+import { message } from "../../consts/Consts";
 
 function DeleteData() {
   const deleteAllDataFromDb = (e) => {
-    var url = layoffUrlEndPoints.delete.ScrapData ;
+    var url = layoffUrlEndPoints.delete.ScrapData;
     fetchToDeleteData(url);
   };
 
@@ -16,9 +17,7 @@ function DeleteData() {
           <button
             className="button primary"
             onClick={() => {
-              if (
-                window.confirm("Are you sure you wish to delete this item?")
-              ) {
+              if (window.confirm(message.confirmDeleteAlert)) {
                 deleteAllDataFromDb();
               }
             }}

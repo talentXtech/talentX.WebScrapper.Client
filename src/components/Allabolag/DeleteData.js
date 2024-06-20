@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { fetchToDeleteData } from "../../api/apiToFetch";
 import { allabolagUrlEndpoints } from "../../api/AllabolagUrls";
+import {message} from "../../consts/Consts"
 
 function DeleteData(props) {
   const [catergory, setCategory] = useState({
@@ -47,7 +48,7 @@ function DeleteData(props) {
             className="button primary"
             onClick={() => {
               if (
-                window.confirm("Are you sure you wish to delete this item?")
+                window.confirm(message.confirmDeleteAlert)
               ) {
                 props.setDataLoaded(true);
                 deleteAllDataFromDb();
@@ -94,7 +95,7 @@ function DeleteData(props) {
             className="button primary"
             onClick={() => {
               if (
-                window.confirm("Are you sure you wish to delete this item?")
+                window.confirm(message.confirmDeleteAlert)
               ) {
                 deleteDataByCategory(catergory.value);
               }
@@ -140,7 +141,7 @@ function DeleteData(props) {
             className="button primary"
             onClick={() => {
               if (
-                window.confirm("Are you sure you wish to delete this item?")
+                window.confirm(message.confirmDeleteAlert)
               ) {
                 deleteDataBySearchInput(inputText.value);
               }

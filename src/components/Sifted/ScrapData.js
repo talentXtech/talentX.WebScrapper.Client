@@ -2,6 +2,7 @@ import { useState } from "react";
 import LoadingComponent from "../LoadingComponent";
 import { postFetchToinitiateScrap } from "../../api/apiToFetch";
 import { SiftedUrlsEndpoints } from "../../api/SiftedUrls";
+import { message } from "../../consts/Consts";
 
 function ScrapData(props) {
   const [sector, setSector] = useState({
@@ -20,7 +21,7 @@ function ScrapData(props) {
           setLoading(false);
           alert(data.data);
         } else {
-          alert("Issue with Scrapping data. Try again later...");
+          alert(message.error);
           setLoading(false);
         }
       })
@@ -44,7 +45,7 @@ function ScrapData(props) {
           setLoading(false);
           alert(data.data);
         } else {
-          alert("Issue with Scrapping data. Try again later...");
+          alert(message.error);
           setLoading(false);
         }
       })

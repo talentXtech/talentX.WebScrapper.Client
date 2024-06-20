@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { fetchToDeleteData } from "../../api/apiToFetch";
 import { SiftedUrlsEndpoints } from "../../api/SiftedUrls";
+import { message } from "../../consts/Consts";
 
 function DeleteData(props) {
   const [sector, setSector] = useState({
@@ -31,9 +32,7 @@ function DeleteData(props) {
           <button
             className="button primary"
             onClick={() => {
-              if (
-                window.confirm("Are you sure you wish to delete this item?")
-              ) {
+              if (window.confirm(message.confirmDeleteAlert)) {
                 props.setDataLoaded(true);
                 deleteAllDataFromDb();
               }
@@ -79,9 +78,7 @@ function DeleteData(props) {
             disabled={sector.value === ""}
             className="button primary"
             onClick={() => {
-              if (
-                window.confirm("Are you sure you wish to delete this item?")
-              ) {
+              if (window.confirm(message.confirmDeleteAlert)) {
                 deleteDataByCategory(sector.value);
               }
             }}

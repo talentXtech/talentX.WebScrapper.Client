@@ -2,6 +2,7 @@ import { useState } from "react";
 import LoadingComponent from "../LoadingComponent";
 import { postFetchToinitiateScrap } from "../../api/apiToFetch";
 import { allabolagUrlEndpoints } from "../../api/AllabolagUrls";
+import { message } from "../../consts/Consts";
 
 function ScrapData(props) {
   const [inputFieldText, setInputFieldText] = useState({
@@ -23,7 +24,7 @@ function ScrapData(props) {
           setLoading(false);
           alert(data.data);
         } else {
-          alert("Issue with Scrapping data. Try again later...");
+          alert(message.error);
           setLoading(false);
         }
       })
@@ -57,7 +58,6 @@ function ScrapData(props) {
                   type="text"
                   id="fieldText"
                   name="fieldText"
-                  placeholder="Please enter a valid Keyword to"
                   value={inputFieldText.value}
                   onChange={(e) =>
                     setInputFieldText({

@@ -2,6 +2,7 @@ import { useState } from "react";
 import LoadingComponent from "../LoadingComponent";
 import { postFetchToinitiateScrap } from "../../api/apiToFetch";
 import { layoffUrlEndPoints } from "../../api/LayoffUrls";
+import { message } from "../../consts/Consts";
 
 function ScrapData() {
   const [isLoading, setLoading] = useState(false);
@@ -16,7 +17,7 @@ function ScrapData() {
           setLoading(false);
           alert(data.data);
         } else {
-          alert("Issue with Scrapping data. Try again later...");
+          alert(message.error);
           setLoading(false);
         }
       })
