@@ -20,7 +20,7 @@ function DownloadData(props) {
 
   function getScrapDataByCategoryAsCsv(e) {
     var searchTerm = e.split(" ").join("%20");
-    var url = allabolagUrlEndpoints.get.DataBySearchInput + searchTerm;
+    var url = allabolagUrlEndpoints.get.DataByCategory + searchTerm;
     const fileName = "Allabolag-" + e + "-Data.csv";
     fetchToDownloadDataAsCsv(url, fileName);
     setCategory({ value: "", isTouched: false });
