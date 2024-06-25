@@ -36,7 +36,7 @@ function ScrapData() {
           <LoadingComponent />
         ) : (
           <>
-            <form className="formcontainer">
+            <div className="formcontainer">
               <h3>Srap data from Layoff</h3>
 
               <button
@@ -48,7 +48,7 @@ function ScrapData() {
               >
                 Scrap Data
               </button>
-            </form>
+            </div>
           </>
         )}
         <div className="breakLine"></div>

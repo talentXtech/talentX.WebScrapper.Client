@@ -89,7 +89,7 @@ function ScrapData(props) {
           <LoadingComponent />
         ) : (
           <>
-            <form className="formcontainer">
+            <div className="formcontainer">
               <h3>Scrap Sectors and Article Urls</h3>
               <button
                 className="button primary"
@@ -97,8 +97,8 @@ function ScrapData(props) {
               >
                 Scrap Data
               </button>
-            </form>
-            <form className="formcontainer">
+            </div>
+            <div className="formcontainer">
               <div>
                 <p className="fieldTitle">Select Sector to Scrap data</p>
                 <select
@@ -135,8 +135,8 @@ function ScrapData(props) {
               >
                 Scrap Data
               </button>
-            </form>
-            <form className="formcontainer">
+            </div>
+            <div className="formcontainer">
               <h3>Scrap All Detailed Data</h3>
               <button
                 className="button primary"
@@ -144,7 +144,7 @@ function ScrapData(props) {
               >
                 Scrap Data
               </button>
-            </form>
+            </div>
           </>
         )}
 

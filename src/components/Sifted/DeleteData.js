@@ -27,7 +27,7 @@ function DeleteData(props) {
     <>
       <div className="container">
         <h2>Delete Scrapped data from Database</h2>
-        <form className="formcontainer">
+        <div className="formcontainer">
           <h3>Delete all Scrapped data </h3>
           <button
             className="button primary"
@@ -40,9 +40,9 @@ function DeleteData(props) {
           >
             Delete All Data
           </button>
-        </form>
+        </div>
 
-        <form className="formcontainer">
+        <div className="formcontainer">
           <div>
             <p className="fieldTitle">
               Select Searched Input-Text to filter & delete data
@@ -85,7 +85,7 @@ function DeleteData(props) {
           >
             Delete Data
           </button>
-        </form>
+        </div>
       </div>
     </>
   );

@@ -47,7 +47,7 @@ function ScrapData(props) {
           <LoadingComponent />
         ) : (
           <>
-            <form className="formcontainer">
+            <div className="formcontainer">
               <div>
                 <label htmlFor="fieldText" className="fieldTitle">
                   Search field Input*
@@ -86,7 +86,7 @@ function ScrapData(props) {
               >
                 Scrap Data
               </button>
-            </form>
+            </div>
           </>
         )}
         <div className="breakLine"></div>

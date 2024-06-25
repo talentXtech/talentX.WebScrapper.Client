@@ -12,7 +12,7 @@ function DeleteData() {
     <>
       <div className="container">
         <h2>Delete Scrapped data from Database</h2>
-        <form className="formcontainer">
+        <div className="formcontainer">
           <h3>Delete all Scrapped data </h3>
           <button
             className="button primary"
@@ -24,7 +24,7 @@ function DeleteData() {
           >
             Delete All Data
           </button>
-        </form>
+        </div>
       </div>
     </>
   );

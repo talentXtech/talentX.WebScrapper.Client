@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchToDeleteData } from "../../api/apiToFetch";
 import { allabolagUrlEndpoints } from "../../api/AllabolagUrls";
-import {message} from "../../consts/Consts"
+import { message } from "../../consts/Consts";
 
 function DeleteData(props) {
   const [catergory, setCategory] = useState({
@@ -42,14 +42,12 @@ function DeleteData(props) {
     <>
       <div className="container">
         <h2>Delete Scrapped data from Database</h2>
-        <form className="formcontainer">
+        <div className="formcontainer">
           <h3>Delete all Scrapped data </h3>
           <button
             className="button primary"
             onClick={() => {
-              if (
-                window.confirm(message.confirmDeleteAlert)
-              ) {
+              if (window.confirm(message.confirmDeleteAlert)) {
                 props.setDataLoaded(true);
                 deleteAllDataFromDb();
               }
@@ -57,8 +55,8 @@ function DeleteData(props) {
           >
             Delete All Data
           </button>
-        </form>
-        <form className="formcontainer">
+        </div>
+        <div className="formcontainer">
           <div>
             <p className="fieldTitle">
               Select Category to filter & delete data
@@ -94,17 +92,15 @@ function DeleteData(props) {
             disabled={catergory.value === ""}
             className="button primary"
             onClick={() => {
-              if (
-                window.confirm(message.confirmDeleteAlert)
-              ) {
+              if (window.confirm(message.confirmDeleteAlert)) {
                 deleteDataByCategory(catergory.value);
               }
             }}
           >
             Delete Data
           </button>
-        </form>
-        <form className="formcontainer">
+        </div>
+        <div className="formcontainer">
           <div>
             <p className="fieldTitle">
               Select Searched Input-Text to filter & delete data
@@ -140,16 +136,14 @@ function DeleteData(props) {
             disabled={inputText.value === ""}
             className="button primary"
             onClick={() => {
-              if (
-                window.confirm(message.confirmDeleteAlert)
-              ) {
+              if (window.confirm(message.confirmDeleteAlert)) {
                 deleteDataBySearchInput(inputText.value);
               }
             }}
           >
             Delete Data
           </button>
-        </form>
+        </div>
       </div>
     </>
   );

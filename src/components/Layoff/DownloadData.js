@@ -1,8 +1,7 @@
 import { fetchToDownloadDataAsCsv } from "../../api/apiToFetch";
-import {layoffUrlEndPoints} from "../../api/LayoffUrls"
+import { layoffUrlEndPoints } from "../../api/LayoffUrls";
 
 function DownloadData() {
-
   const getAllScrapDataAsCsv = () => {
     const fileName = "LayOff-All-Data.csv";
     var url = layoffUrlEndPoints.get.DataAsCSV;
@@ -13,12 +12,12 @@ function DownloadData() {
     <>
       <div className="container">
         <h2>Download Scrapped data as CSV</h2>
-        <form className="formcontainer">
+        <div className="formcontainer">
           <h3>Download all Scrapped data as CSV</h3>
           <button className="button primary" onClick={getAllScrapDataAsCsv}>
             Download All as CSV
           </button>
-        </form>
+        </div>
         <div className="breakLine"></div>
       </div>
     </>

@@ -8,11 +8,11 @@ function DownloadData(props) {
     isTouched: false,
   });
 
-  const getAllScrapDataAsCsv = () => {
+  function getAllScrapDataAsCsv() {
     const fileName = "Sifted-All-Data.csv";
     var url = SiftedUrlsEndpoints.get.DataAsCSV;
     fetchToDownloadDataAsCsv(url, fileName);
-  };
+  }
 
   function getScrapDataByCategoryAsCsv(e) {
     var searchTerm = e.split(" ").join("%20");
@@ -26,13 +26,16 @@ function DownloadData(props) {
     <>
       <div className="container">
         <h2>Download Scrapped data as CSV</h2>
-        <form className="formcontainer">
+        <div className="formcontainer">
           <h3>Download all Scrapped data as CSV</h3>
-          <button className="button primary" onClick={getAllScrapDataAsCsv}>
+          <button
+            className="button primary"
+            onClick={() => getAllScrapDataAsCsv()}
+          >
             Download All as CSV
           </button>
-        </form>
-        <form className="formcontainer">
+        </div>
+        <div className="formcontainer">
           <div>
             <p className="fieldTitle">
               Select Sector to filter & download data
@@ -71,7 +74,7 @@ function DownloadData(props) {
           >
             Download as CSV
           </button>
-        </form>
+        </div>
 
         <div className="breakLine"></div>
       </div>
