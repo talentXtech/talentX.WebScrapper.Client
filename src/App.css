@@ -89,6 +89,15 @@ nav .container {
 }
 .laptopNavBar {
   box-shadow: 0px 0px 20px 0px #000;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.componentcontainer {
+  margin-top: 80px;
 }
 
 nav ul {
@@ -115,6 +124,12 @@ img {
 .nav-item:hover {
   color: #4562d6;
   text-decoration: underline;
+}
+.nav-item-active {
+  color: #4562d6;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 24px;
 }
 .loader {
   border: 16px solid #f3f3f3;

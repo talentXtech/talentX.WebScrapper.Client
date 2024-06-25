@@ -1,4 +1,4 @@
-const mainUrl = "https://localhost:7118/WebScrap/";
+const mainUrl = "http://localhost/allabolog/WebScrap/";
 const allabolagUrlEndpoints = {
   post: {
     initiateScrap: mainUrl + "ScrapInfo?filterInput=",

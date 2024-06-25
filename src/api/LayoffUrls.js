@@ -1,15 +1,13 @@
-const mainUrl = "https://localhost:7292/WebScrap/";
+const mainUrl = "http://localhost/layoff/WebScrap/";
 const layoffUrlEndPoints = {
-  post:{
+  post: {
     ScrapData: mainUrl + "GetScrapInfo",
   },
   get: {
     DataAsCSV: mainUrl + "GetScrapInfoAsCSV",
-    
   },
   delete: {
     ScrapData: mainUrl + "DeleteScrapOutputData",
-   
   },
 };
 

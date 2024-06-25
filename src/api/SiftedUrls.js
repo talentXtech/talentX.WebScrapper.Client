@@ -1,4 +1,4 @@
-const mainUrl = "https://localhost:7078/WebScrap/";
+const mainUrl = "https://localhost:7000/WebScrap/";
 
 const SiftedUrlsEndpoints = {
   post: {

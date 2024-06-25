@@ -38,7 +38,14 @@ function ScrapData() {
           <>
             <form className="formcontainer">
               <h3>Srap data from Layoff</h3>
-              <button className="button primary" onClick={initiateScrapHandler}>
+
+              <button
+                className="button primary"
+                onClick={() => {
+                  if (window.confirm(message.confirmScrapAlert))
+                    initiateScrapHandler();
+                }}
+              >
                 Scrap Data
               </button>
             </form>
